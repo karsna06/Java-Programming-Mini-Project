@@ -1,4 +1,4 @@
-package com.gym;
+package com.gym.exception;
 
 /**
  * Thrown when a member is not found in the system.

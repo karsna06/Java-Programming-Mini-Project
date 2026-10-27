@@ -138,7 +138,7 @@ Compile all source files into the `out` directory:
 
 ```bash
 
-&#x20;  javac -d out \*.java
+&#x20;  javac -d out -sourcepath src src/com/gym/*/*.java
 
 ```
 
@@ -146,7 +146,7 @@ Run the main application:
 
 ```bash
 
-&#x20;  java -cp out com.gym.Main
+&#x20;  java -cp out com.gym.main.Main
 
 ```
 
@@ -189,6 +189,7 @@ A member renews an expired membership beyond the configured 5-day grace period. 
 ### Scenario E: Business Rule 1 Inactive Subscription Validation
 
 Attempting to record attendance for `Rohan Verma` (ID: `3`) who has no active subscription. The system catches `InactiveSubscriptionException`, prints `\[!] Attendance Denied: Member has no active subscription.`, and refuses to persist an attendance check-in.
+
 
 
 

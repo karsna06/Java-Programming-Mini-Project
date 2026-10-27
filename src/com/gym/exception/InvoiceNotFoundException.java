@@ -1,4 +1,4 @@
-package com.gym;
+package com.gym.exception;
 
 /**
  * Thrown when a payment is attempted without a valid unpaid invoice.

@@ -1,5 +1,9 @@
 
-package com.gym;
+package com.gym.main;
+
+import com.gym.model.*;
+import com.gym.exception.*;
+import com.gym.service.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -473,3 +477,4 @@ public class Main {
         System.out.println("\n  ─── Demo data loaded. You can start from the menu. ───\n");
     }
 }
+

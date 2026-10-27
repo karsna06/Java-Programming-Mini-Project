@@ -1,4 +1,7 @@
-package com.gym;
+package com.gym.service;
+
+import com.gym.model.*;
+import com.gym.exception.*;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -179,3 +182,4 @@ public class GymManagementSystem {
         return Collections.unmodifiableList(payments);
     }
 }
+

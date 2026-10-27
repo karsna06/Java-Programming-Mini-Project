@@ -1,4 +1,4 @@
-package com.gym;
+package com.gym.model;
 
 /**
  * Represents a gym membership plan with billing cycle, pricing, and penalty policy.

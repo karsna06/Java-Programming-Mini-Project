@@ -6,7 +6,7 @@ REM ============================================================
 
 SET "JAVAC=C:\Users\Karsna N\Downloads\eclipse-java-2026-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.11.v20260515-1531\jre\bin\javac.exe"
 SET "JAVA=C:\Users\Karsna N\Downloads\eclipse-java-2026-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.11.v20260515-1531\jre\bin\java.exe"
-SET "SRC=%~dp0"
+SET "SRC=%~dp0src"
 SET "OUT=%~dp0out"
 
 echo.
@@ -20,19 +20,11 @@ echo [1/3] Creating output directory...
 if not exist "%OUT%" mkdir "%OUT%"
 
 echo [2/3] Compiling Java sources...
-"%JAVAC%" -d "%OUT%" ^
-  "%SRC%Member.java" ^
-  "%SRC%Plan.java" ^
-  "%SRC%Subscription.java" ^
-  "%SRC%AttendanceRecord.java" ^
-  "%SRC%Invoice.java" ^
-  "%SRC%Payment.java" ^
-  "%SRC%Trainer.java" ^
-  "%SRC%InactiveSubscriptionException.java" ^
-  "%SRC%InvoiceNotFoundException.java" ^
-  "%SRC%MemberNotFoundException.java" ^
-  "%SRC%GymManagementSystem.java" ^
-  "%SRC%Main.java"
+"%JAVAC%" -d "%OUT%" -sourcepath "%SRC%" ^
+  "%SRC%\com\gym\model\*.java" ^
+  "%SRC%\com\gym\exception\*.java" ^
+  "%SRC%\com\gym\service\*.java" ^
+  "%SRC%\com\gym\main\*.java"
 
 IF %ERRORLEVEL% NEQ 0 (
   echo.
@@ -43,6 +35,6 @@ IF %ERRORLEVEL% NEQ 0 (
 
 echo [3/3] Launching Gym Management System...
 echo.
-"%JAVA%" -cp "%OUT%" com.gym.Main
+"%JAVA%" -cp "%OUT%" com.gym.main.Main
 
 pause
