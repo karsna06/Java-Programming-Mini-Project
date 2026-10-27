@@ -15,7 +15,7 @@
 * **Department:** Artificial Intelligence and Data Science (AD)
 * **Course Code \& Title:** 23CSR306 - Java Programming
 * **Date of Submission:** 25-10-2026
-* **Repository URL:** 
+* **Repository URL:** https://github.com/karsna06/Java-Programming-Mini-Project
 
 ### 1.1 Problem Statement
 
