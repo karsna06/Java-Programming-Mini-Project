@@ -20,11 +20,10 @@ echo [1/3] Creating output directory...
 if not exist "%OUT%" mkdir "%OUT%"
 
 echo [2/3] Compiling Java sources...
-"%JAVAC%" -d "%OUT%" -sourcepath "%SRC%" ^
-  "%SRC%\com\gym\model\*.java" ^
-  "%SRC%\com\gym\exception\*.java" ^
-  "%SRC%\com\gym\service\*.java" ^
-  "%SRC%\com\gym\main\*.java"
+pushd "%SRC%"
+powershell -NoProfile -Command "(Get-ChildItem -Recurse -Filter '*.java').FullName | ForEach-Object { '\"' + ($_.Replace('\','/')) + '\"' } | Out-File -FilePath '%OUT%\sources.txt' -Encoding ascii"
+"%JAVAC%" -d "%OUT%" -sourcepath "." @"%OUT%\sources.txt"
+popd
 
 IF %ERRORLEVEL% NEQ 0 (
   echo.
